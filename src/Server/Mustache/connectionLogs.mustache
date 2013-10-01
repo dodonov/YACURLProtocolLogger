@@ -1,0 +1,44 @@
+{{<layout}}
+{{$body}}
+
+{{#connectionLogs}}
+<div class="first_level">
+    <table class="first_level">
+        <tr>
+            <td class="method">{{m_HTTPMethod}}</td>
+            <td class="URL">{{m_URL}}</td>
+        </tr>
+    </table>
+</div>
+<div class="connection_info second_level">
+    <div>
+        {{#request}}
+        <div class="headers" style="float:left;">
+            {{>headers}}
+        </div>
+        {{/request}}
+        {{#response}}
+        <div class="headers" style="float:right;">
+            {{>headers}}
+        </div>
+        {{/response}}
+    </div>
+    <div class="events">
+        <table>
+            <th colspan="2">
+                Events
+            </th>
+            {{#events}}
+            <tr>
+                <td class="event_time">{{m_timestamp}}</td>
+                <td class="event_message">{{message}}</td>
+            </tr>
+            {{/events}}
+        </table>
+    </div>
+</div>
+{{/connectionLogs}}
+
+{{/body}}
+{{/layout}}
+

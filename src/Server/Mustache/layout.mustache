@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Network Log</title>
+        <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $(".second_level").hide()
+
+                $(".first_level").click(function(){
+                    $(this).nextUntil(".first_level").slideToggle();
+                });
+            });
+        </script>
+
+        {{>css}}
+        
+    </head>
+
+    <body>
+        {{$body}}{{/}}
+    </body>
+
+</html>

@@ -1,0 +1,24 @@
+<table>
+    <th colspan="2">{{m_title}}</th>
+
+    {{#m_HTTPHeaders}}
+    {{>dictionary_row}}
+    {{/m_HTTPHeaders}}
+
+    {{#m_otherProperties}}
+    {{>dictionary_row}}
+    {{/m_otherProperties}}
+
+    <table>
+        <tr>
+            <td class="header_key" style="font-weight:bold">Body:</td>
+            <td class="header_value">
+                {{m_bodySize}}
+                {{#m_hasBody}}
+                <a href="{{#m_isRequest}}request{{^}}response{{/}}-body/{{UUID}}" target="_blank">view in browser</a>
+                {{/m_hasBody}}
+            </td>
+        </tr>
+    </table>
+
+</table>
